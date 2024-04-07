@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	"github.com/jimu-os/gobatis"
-	"github.com/jimu-server/config/config"
-	"github.com/jimu-server/logger/logger"
+	"github.com/jimu-server/config"
+	"github.com/jimu-server/logger"
 	_ "github.com/lib/pq"
 )
 
