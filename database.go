@@ -27,6 +27,6 @@ func init() {
 	}
 	GoBatis = gobatis.New(DB)
 	// PostgreSQL 就必须指定 Type 属性 兼容模版参数解析
-	GoBatis.Type = gobatis.PostgreSQL
+	GoBatis.DbType(gobatis.PostgreSQL)
 	GoBatis.Logs(logger.Logger)
 }
