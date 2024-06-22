@@ -18,15 +18,14 @@ func init() {
 	conStr := config.Evn.App.FileDb
 	LocalDB, err = sql.Open("sqlite3", conStr)
 	if err != nil {
-		logger.Logger.Error(fmt.Sprint("数据库连接失败,", err.Error()))
+		logger.Logger.Error(fmt.Sprint("Database connection failure,", err.Error()))
 		panic(err)
 	}
 	if err = DB.Ping(); err != nil {
-		logger.Logger.Error(fmt.Sprint("Ping 数据库连接失败,", err.Error()))
+		logger.Logger.Error(fmt.Sprint("Ping the database connection failed. Procedure,", err.Error()))
 		panic(err)
 	}
 	LocalGoBatis = gobatis.New(LocalDB)
-	// PostgreSQL 就必须指定 Type 属性 兼容模版参数解析
 	LocalGoBatis.DbType(gobatis.Sqlite)
 	LocalGoBatis.Logs(logger.Logger)
 }
